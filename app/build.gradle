@@ -1,0 +1,78 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+apply from: '../dependencies.gradle'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        minSdkVersion 23
+        targetSdkVersion 28
+        versionCode 1
+        versionName "0.1"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    androidExtensions {
+        experimental = true
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    flavorDimensions "default"
+
+    productFlavors {
+        def BASE_URL = "BASE_URL"
+        dev {
+            applicationId "cz.sedlacek.weatherforecast.dev"
+            dimension "default"
+            buildConfigField("String", BASE_URL, '"https://api.openweathermap.org/"')
+        }
+        prod {
+            applicationId "cz.sedlacek.weatherforecast"
+            dimension "default"
+            buildConfigField("String", BASE_URL, '"https://api.openweathermap.org/"')
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "androidx.appcompat:appcompat:$AppCompatVersion"
+    implementation "com.google.android.material:material:$MaterialVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$ConstraintVersion"
+
+    // Lifecycle
+    implementation "androidx.lifecycle:lifecycle-extensions:$LifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$LifecycleVersion"
+
+    // Data binding
+    kapt "com.android.databinding:compiler:$DataBindingVersion"
+
+    // Network
+    implementation networkDependencies.values()
+
+    // Dagger
+    implementation "com.google.dagger:dagger:$DaggerVersion"
+    kapt "com.google.dagger:dagger-compiler:$DaggerVersion"
+
+    // Tests
+    testImplementation "junit:junit:$JUnitVersion"
+    androidTestImplementation "androidx.test:runner:$RunnerVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$EspressoVersion"
+
+}

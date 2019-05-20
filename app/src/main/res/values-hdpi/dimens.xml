@@ -1,0 +1,16 @@
+<resources>
+    <dimen name="app_bar_height">180dp</dimen>
+    <dimen name="base_margin">16dp</dimen>
+    <dimen name="view_margin">12dp</dimen>
+    <dimen name="view_margin_half">6dp</dimen>
+    <dimen name="base_padding">12dp</dimen>
+    <dimen name="base_padding_half">6dp</dimen>
+    <dimen name="text_extra_small">11sp</dimen>
+    <dimen name="text_small">12sp</dimen>
+    <dimen name="text_medium">12sp</dimen>
+    <dimen name="text_medium_large">13sp</dimen>
+    <dimen name="text_large">15sp</dimen>
+    <dimen name="text_extra_large">18sp</dimen>
+    <dimen name="text_gigantic">36sp</dimen>
+    <dimen name="text_xx_large">18sp</dimen>
+</resources>

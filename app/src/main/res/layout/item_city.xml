@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="forecast" type="cz.sedlacek.weatherforecast.model.Forecast"/>
+        <import type="cz.sedlacek.weatherforecast.ConstantsKt"/>
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginTop="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/base_padding"
+                android:paddingStart="@dimen/base_padding"
+                android:paddingEnd="@dimen/base_padding"
+                android:paddingBottom="@dimen/base_padding_half"
+                android:background="@color/colorPrimary">
+
+                <TextView
+                    android:id="@+id/list_item_city"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:text="@{forecast.name}"
+                    android:textColor="@android:color/white"
+                    tools:text="Vienna"
+                    android:textSize="@dimen/text_large"
+                    android:textAllCaps="true"/>
+
+                <TextView
+                    android:id="@+id/list_item_temp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:text="@{forecast.valueDegrees(forecast.main.temp)}"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/text_extra_large"
+                    tools:text="17°C"
+                    android:textStyle="bold"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/base_padding_half"
+                android:paddingBottom="@dimen/base_padding"
+                android:paddingEnd="@dimen/base_padding"
+                android:paddingStart="@dimen/base_padding">
+
+                <TextView
+                    android:id="@+id/list_item_wind"
+                    style="@style/CityForecastValues"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/list_item_wind_title"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:text="@{forecast.valueWind}"
+                    tools:text="24m/s"/>
+
+                <TextView
+                    android:id="@+id/list_item_wind_title"
+                    style="@style/CityForecastTitle"
+                    app:layout_constraintTop_toBottomOf="@id/list_item_wind"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/list_item_wind"
+                    android:text="@string/wind"/>
+
+                <TextView
+                    android:id="@+id/list_item_humidity"
+                    style="@style/CityForecastValues"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/list_item_humidity_title"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:text="@{forecast.valueHumidity}"
+                    tools:text="65%"/>
+
+                <TextView
+                    android:id="@+id/list_item_humidity_title"
+                    style="@style/CityForecastTitle"
+                    app:layout_constraintTop_toBottomOf="@id/list_item_humidity"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:text="@string/humidity"/>
+
+                <TextView
+                    android:id="@+id/list_item_pressure"
+                    style="@style/CityForecastValues"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/list_item_pressure_title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:text="@{forecast.valuePressure}"
+                    tools:text="65kPa"/>
+
+                <TextView
+                    android:id="@+id/list_item_pressure_title"
+                    style="@style/CityForecastTitle"
+                    app:layout_constraintTop_toBottomOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:text="@string/pressure"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

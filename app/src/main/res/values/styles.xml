@@ -1,0 +1,65 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColor">@color/textColor</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+    <style name="ForecastTitle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/base_margin</item>
+        <item name="android:layout_marginTop">@dimen/view_margin</item>
+        <item name="android:textSize">@dimen/text_medium_large</item>
+        <item name="android:textColor">@color/textColorLight</item>
+    </style>
+
+    <style name="ForecastList">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="android:padding">@dimen/base_padding</item>
+        <item name="android:layout_marginTop">@dimen/view_margin_half</item>
+    </style>
+
+    <style name="ForecastDetailValue">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_medium_large</item>
+        <item name="android:layout_marginTop">@dimen/view_margin_half</item>
+    </style>
+
+    <style name="ForecastDetailTitle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/textColorLight</item>
+    </style>
+
+    <style name="CityForecastTitle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_extra_small</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/textColorLight</item>
+    </style>
+
+    <style name="CityForecastValues">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_medium</item>
+    </style>
+
+</resources>
