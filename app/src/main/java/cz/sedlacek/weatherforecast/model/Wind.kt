@@ -2,7 +2,7 @@ package cz.sedlacek.weatherforecast.model
 
 import android.os.Parcelable
 import cz.sedlacek.weatherforecast.R
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Wind (val speed: Float, val deg: Float): Parcelable {

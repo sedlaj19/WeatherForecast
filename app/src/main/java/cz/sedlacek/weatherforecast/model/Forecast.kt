@@ -3,7 +3,7 @@ package cz.sedlacek.weatherforecast.model
 import android.os.Parcelable
 import cz.sedlacek.weatherforecast.*
 import cz.sedlacek.weatherforecast.utils.convertDate
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.*
