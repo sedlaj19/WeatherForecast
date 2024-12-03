@@ -1,4 +1,12 @@
 # WeatherForecast
+### Comment 2024
+I've created this app in 2019 for an interview. It had to be a simple app showing weather forecast for ten hardcoded cities.
+
+Nowadays I would probably use Jetpack Compose to create a new app like this. I would also use Hilt instead of Dagger, Kotlin Coroutines Flow instead of LiveData etc. It it was a bigger app I would use repositories and domain layer, but for this simple app it would be a huge overkill.
+
+Room database could be used to cache the data fetching from the API.
+
+### Original text from 2019
 App showing weather forecast for ten hardcoded cities (PRague, London, Vienna, Paris, Wellington, New York, Berlin, Zlin, Barcelona, Tokyo). Purpose of this app is to show how I create the apps. Which patterns do I use, the structure of the app, architecture, etc.
 
 The app is written in Kotlin with a couple of third party libraries (Retrofit, Coroutines, Dagger, Android Architecture Components). It implements MVVM architecture/pattern. My approach is probably little bit too complicated for that task, however, I have used the opportunity to learn something new and try the concepts and patterns in Kotlin (which I usually use in Java). I have not had the luck to use Kotlin that much before, only smaller projects for fun.
